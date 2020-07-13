@@ -15,7 +15,7 @@
 const newPauseFunction = (sec) => {
   return new Promise(function (resolve) {
     console.log(`${sec}s pause`);
-    setTimeout(() => resolve('resolve'), sec * 1000);
+    setTimeout(() => resolve("resolve"), sec * 1000);
   });
 };
 
@@ -27,6 +27,18 @@ newPauseFunction(1)
 ```
 
 _let's convert it to async/await_
+
+```js
+const handlePause = async () => {
+  await newPauseFunction(1);
+  await newPauseFunction(2);
+  await newPauseFunction(3);
+  const answer = await newPauseFunction(3);
+  console.log(answer);
+};
+
+handlePause();
+```
 
 ---
 
@@ -45,6 +57,17 @@ transformText(string)
     return str;
   })
   .catch((err) => console.log(err));
+
+//ANSWER
+const handleTransform = async (string) =>{
+  const 1 = await transformText(string);
+  const 2 = await allCaps(1);
+  const 3 = await trimFirst(2);
+  const 4 = await trimLast(3);
+  const 5 = await replaceWithX(4);
+  console.log(5);
+}
+handleTransform('bacon');
 ```
 
 ---
@@ -58,12 +81,12 @@ As much as possible, you should wrap your `await`(s) inside of a `try/catch` blo
 ```js
 const asyncPause = async () => {
   try {
-    console.log('Go');
+    console.log("Go");
     await newPauseFunction(1);
     await newPauseFunction(2);
     await newPauseFunction(3);
     await newPauseFunction(3);
-    console.log('Stop');
+    console.log("Stop");
   } catch (err) {
     console.log(err);
   }
