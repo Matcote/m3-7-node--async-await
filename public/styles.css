@@ -1,0 +1,19 @@
+.joke {
+  font-size: 50px;
+}
+.box {
+  width: 600px;
+  height: 600px;
+  background-color: sandybrown;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body {
+  font-family: "Do Hyeon", sans-serif;
+}
+#type {
+  font-size: xx-large;
+}

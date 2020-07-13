@@ -1,13 +1,25 @@
 <!DOCTYPE html>
-
+<% const changeJoke = ()=>{ %> <% handleJoke('dad').then((data) => joke = data);
+%> <% document.querySelector('joke').innerText = joke; %> <% } %>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>HAHAHAHA</title>
-    <link rel="stylesheet" href="../public/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <h1><%- joke %></h1>
+    <div class="box">
+      <h1 class="joke"><%- joke %></h1>
+      <select name="type" id="type" onchange="changeJoke()">
+        <option value="dad">Dad</option>
+        <option value="tronald">Tronald Dump</option>
+        <option value="geek">Geek</option>
+      </select>
+    </div>
   </body>
 </html>
