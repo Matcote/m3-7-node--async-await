@@ -39,15 +39,15 @@ express()
     let whichJoke = Math.floor(Math.random() * 3);
     if (whichJoke === 0) {
       handleJoke("dad").then((joke) => {
-        res.status(200).send(joke);
+        res.status(200).render("pages/joke", { joke: joke });
       });
     } else if (whichJoke === 1) {
       handleJoke("tronald").then((joke) => {
-        res.status(200).send(joke);
+        res.status(200).render("pages/joke", { joke: joke });
       });
     } else if (whichJoke === 2) {
       handleJoke("geek").then((joke) => {
-        res.status(200).send(joke);
+        res.status(200).render("pages/joke", { joke: joke });
       });
     }
   })
